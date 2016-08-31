@@ -2,29 +2,83 @@
    Author's custom styles
    ========================================================================== */
 @import 'flexvideo.css';
-@import url(http://fonts.googleapis.com/css?family=Cardo|Kaushan+Script);
+@import url(http://fonts.googleapis.com/css?family=Kaushan+Script);
 
 body {
 	font-size: 18px;
 	line-height: 1.5;
 	font-weight: 200;
 	color: #777;
-	font-family: 'Cardo', Helvetica, Arial, serif;
+	font-family: Helvetica, Arial, serif;
 }
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
 	font-family: 'Kaushan Script', Georgia, serif, cursive;
 	color: #777;
 	font-weight: 300;
 }
-a {
+h4, h5, h6 {
+	font-family: "Helvetica Neue",Verdana,Arial,sans-serif;
 	color: #777;
+	font-weight: bold;
+}
+article h2, .treatment-title, .page-header h2, .widget h1, #social-networks h3,
+.category-info h2, .category-info h3, .category-info h4, .category-info h5, .category-info h6,
+.entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {
+	font-family: "Helvetica Neue",Verdana,Arial,sans-serif;
+	font-weight: lighter;
+	line-height: 1.3;
+}
+.page-title, .entry-title {
+	color: #333;
+}
+a {
+	color: #7d589e;
 	font-weight: 300;
+}
+a:hover, a:focus {
+	color: #FFA838;
 }
 img.aligncenter {
 	display: block;
 	margin: 0 auto;
 }
-
+.btn {
+	border: solid 1px #7d589e;
+	border-radius: 0;
+	background-color: #FFF;
+	-webkit-transition: all 0.25s ease-in-out;
+	-moz-transition: all 0.25s ease-in-out;
+	-ms-transition: all 0.25s ease-in-out;
+	-o-transition: all 0.25s ease-in-out;
+	transition: all 0.25s ease-in-out;
+}
+.btn:hover, .btn:hover {
+	content: ' ';
+	border: 1px solid #777;
+}
+.btn:hover {
+	border-color: #777;
+	background-color: #F9F9F9;
+	color: #777;
+	opacity: 0.5;
+	-webkit-transition: all 0.25s ease-in-out;
+	-moz-transition: all 0.25s ease-in-out;
+	-ms-transition: all 0.25s ease-in-out;
+	-o-transition: all 0.25s ease-in-out;
+	transition: all 0.25s ease-in-out;
+}
+.btn.btn-default, .btn.btn-primary {
+	color: #FFF;
+	background: #FFA838;
+	border-color: #CC7400;
+	text-shadow: none;
+}
+.btn.btn-default:hover, .btn.btn-primary:hover {
+	border-color: transparent;
+}
+.widget .post-date,#site-footer {
+	font-size: 14px;
+}
 /* chromeframe error */
 .chromeframe {
 	background: #a00;
@@ -37,10 +91,21 @@ img.aligncenter {
 	color: #fff;
 	text-decoration: underline;
 }
+.page-header {
+	margin-top: 0px;
+}
 .page-header-top-right {
 	margin-top: 10px;
 }
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+	background-color: #FFA838;
+	border-color: #999;
+}
+.pagination > li > a, .pagination > li > span {
+	color: #7d589e;
+}
 .pagination {
+	float: left;
 	margin: 0;
 }
 .pagination-center {
@@ -61,11 +126,13 @@ img.aligncenter {
 	margin-right: 0;
 	margin-bottom: 0;
 }
-main {
-	background: #F1F1F1 url("../img/beauty-salon-taunton-background.jpg") center bottom repeat-x;
+.home main, main.site-main, #sidebar-right.below, #sidebar-left.below {
+	background: #F9F9F9 url("../img/beauty-salon-taunton-background.jpg") center bottom repeat-x;
 	padding-top: 20px;
 	padding-bottom: 20px;
-	border-bottom: solid 1px #D6D6D6;
+}
+.category main, .search main {
+	background-image: none;
 }
 main ul {
 	padding: 0;
@@ -74,16 +141,30 @@ main ul {
 main li {
 	list-style: none;
 }
-main #main-column img {
-	display: block;
-	margin: 0 auto;
-	border: solid 1px #999;
-	width: 100%;
+.contact-other {
+	margin-top: 25px;
+	margin-bottom: 25px; 
 }
-main#main #main-column img.ajax-loader {
+.contact-other a {
+	float: left;
+	display: inline-block;
+	border: solid 1px #CCC;
+	max-width: 100px;
+	margin-top: 10px;
+	margin-right: 10px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+}
+.contact-other a:hover {
+	border-color: #999;
+}
+main#main #main-column img.ajax-loader,
+.widget_categories label.screen-reader-text {
 	display: none;
 }
 #site-header {
+	border-bottom: 1px solid #CCC;
 	background: #7d589e; /* Old browsers */
 	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
 	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzdkNTg5ZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjkwJSIgc3RvcC1jb2xvcj0iIzQzMzE1ZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM0MzMxNWUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
@@ -100,8 +181,12 @@ main#main #main-column img.ajax-loader {
 	margin-bottom: 0;
 	border-bottom: none;
 }
+#site-header .navbar-collapse {
+	padding-right: 0;
+}
 #site-header .navbar li {
-	background: #F1F1F1;
+	background: #F9F9F9;
+	border-right: 1px solid #CCC;
 }
 #site-header .navbar-toggle {
 	border: 1px solid #FFF;
@@ -119,49 +204,78 @@ main#main #main-column img.ajax-loader {
 #menu-primary-navigation li.active a:hover {
 	background: #4D8B87;
 }
-#page-contact .btn-primary {
+#breadcrumbs {
+	margin-top: 25px;
+}
+#page-contact-the-taunton-salon .btn-primary {
 	background: linear-gradient(to bottom, #005953 0px, #002F38 100%);
 }
-#page-contact .entry-content img {
+#page-contact-the-taunton-salon .entry-content img {
 	left: left;
 	max-width: 100px;
 	width: auto;
 	height: auto;
 }
+#page-contact-the-taunton-salon #main-column main {
+}
+#page-contact-the-taunton-salon #main-column main {
+	background-image: none;
+}
 #treatments {
 	padding-left: 0;
 	padding-right: 0;
 }
-#treatments .treatment,
-#treatments .sub-treatment {
+#treatments .treatment {
 	padding-bottom: 25px;
-	text-align: center;
 }
-#treatments .sub-treatment .treatment-desc {
-	border-top: solid 1px #CCC;
+.treatment-desc {
+	background-color: #F9F9F9;
+	border: solid 1px #CCC;
+	padding: 10px 10px 0 10px;
+}
+.treatment-desc a {
+	margin-bottom: 10px;
 }
 #treatments .treatment .img-container {
 	border-left: solid 1px #CCC;
 	border-right: solid 1px #CCC;
 	border-top: solid 1px #CCC;
 }
-#treatments .treatment-desc .treatment-title {
+.buy-treatment {
+	min-height: 50px;
+}
+.treatment-title {
 	font-size: 22px;
-	font-weight: bold;
-
+	margin-bottom: 5px;
+	min-height: 60px;
 }
-#treatments .treatment-desc {
+.sub-treatment {
+	width: 100%;
+	position: relative;
 	background: #F9F9F9;
-	padding-top: 10px;
-	padding-left: 10px;
-	padding-right: 10px;
-	border-left: solid 1px #CCC;
-	border-right: solid 1px #CCC;
-	border-bottom: solid 1px #CCC;
+	padding: 20px 0;
+	border: solid 1px #CCC;
+	margin-bottom: 25px;
 }
-#treatments .treatment,
-.feature-img {
-	max-width: 450px;
+.sub-treatment .treatment-title {
+	margin-bottom: 10px;
+	min-height: 0;
+}
+.sub-treatment .btn {
+	position: relative;
+	padding-left: 50px;
+	width: 100%;
+}
+.sub-treatment .treatment-desc {
+	border: 0;
+	border-right: 1px #CCC solid;
+	padding: 10px 15px;
+}
+.sub-treatment .img-container img {
+	border: solid 1px #CCC;
+}
+#treatments .treatment, .feature-img {
+	max-width: 600px;
 	margin: 0 auto;
 }
 .site-main .format-aside {
@@ -258,6 +372,14 @@ main#main #main-column img.ajax-loader {
 #main-column .attachment .entry-meta {
 	margin-bottom: 20px;
 }
+#main-column .entry-meta i {
+	float: left;
+	margin-right: 10px;
+}
+#main-column .entry-meta a {
+	display: block;
+	margin-left: 30px;
+}
 #main-column .post .entry-header .entry-meta {
 	color: #999;
 }
@@ -294,20 +416,85 @@ main#main #main-column img.ajax-loader {
 	margin-top: 0;
 	word-wrap: break-word;
 }
-#sidebar-left .widget,
-#sidebar-right .widget {
-	border: 1px solid #eee;
-	margin-bottom: 20px;
-	overflow: hidden;
-	padding: 10px;
+/************************
+* Sidebar
+*************************/
+#sidebar-right.aside, #sidebar-left.aside {
+	padding: 0;
 }
-#sidebar-left .widget ul,
-#sidebar-right .widget ul {
+#sidebar-right.below, #sidebar-left.below {
+	border-top: solid 1px #D6D6D6;
+}
+#sidebar-right.below aside, #sidebar-left.below aside {
+}
+#sidebar-left, #sidebar-right {
+	margin-bottom: 0;
+}
+.widget {
+	position: relative;
+}
+.widget i, .sub-treatment i {
+	position: absolute;
+	z-index: 99;
+	top: 0;
+	left: 0;
+	color: #FFF;
+	background-color: #777;
+	padding: 5px 15px 15px 5px;
+	font-size: 22px;
+	-webkit-border-bottom-right-radius: 100%;
+	-moz-border-radius-bottomright: 100%;
+	border-bottom-right-radius: 100%;
+}
+.sub-treatment > i {
+	top: -10px;
+	left: -10px;
+	color: #7d589e;
+	font-size: 32px;
+	background-color: transparent;
+	-ms-transform: rotate(-5deg); /* IE 9 */
+	-webkit-transform: rotate(-5deg); /* Chrome, Safari, Opera */
+	-moz-transform: rotate(-5deg); /* Firefox */
+	-o-transform: rotate(-5deg); /* Old Opera */
+	transform: rotate(-5deg);
+}
+.widget.has_icon .widget-title {
+	padding: 5px 35px 5px;
+}
+#sidebar-left.below .widget,
+#sidebar-right.below .widget {
+	width: 31.666666%;
+	min-height: 150px;
+	margin-right: 2.5%;
+	background-color: #FFF;
+	float: left;
+	padding: 15px;
+	border: solid 1px #CCC;
+}
+#sidebar-left .widget.has_icon,
+#sidebar-right .widget.has_icon {
+	padding-top: 5px;
+}
+.blog #sidebar-left.below .widget,
+.blog #sidebar-right.below .widget,
+.category #sidebar-left.below .widget,
+.category #sidebar-right.below .widget,
+.archive #sidebar-left.below .widget,
+.archive #sidebar-right.below .widget {
+	width: 100%;
+}
+#sidebar-left.below .widget:last-child,
+#sidebar-right.below .widget:last-child {
+	margin-right: 0;
+}
+#sidebar-left.below .widget ul,
+#sidebar-right.below .widget ul {
 	padding-left: 20px;
+	margin-bottom: 0;
 }
 #sidebar-left .widget .widget-title,
 #sidebar-right .widget .widget-title {
-	font-size: 18px;
+	font-size: 22px;
 	margin-top: 0;
 }
 #featured-treatments {
@@ -315,12 +502,14 @@ main#main #main-column img.ajax-loader {
 	border-top: solid 1px #D6D6D6;
 	border-bottom: solid 1px #D6D6D6;
 }
+#featured-treatments .col-sm-4 a {
+	margin-top: 20px;
+}
 #site-footer a {
 	color: #FFF;
 }
 #site-footer {
 	background: #444;
-	font-size: 14px;
 	padding: 10px;
 	color: #FFF;
 }
@@ -330,20 +519,47 @@ main#main #main-column img.ajax-loader {
 /***************************
 * Slider styles
 ****************************/
+.rslides_container .caption {
+	position: absolute;
+	bottom: -10px;
+	background: rgba(0,0,0,0.5);
+	color: #FFF;
+	padding: 10px;
+}
 #page-home #main {
+	padding-top: 0;
 	padding-bottom: 0;
 }
 #page-home #main-column {
 	overflow-x: visible;
+	width: 100%;
+}
+#page-home #main .rslides {
+	float: left;
+	width: 100%;
 }
 #page-home #main .rslides_container {
 	position: relative;
 	overflow-x: hidden;
 	margin: 0 auto;
-	padding-left: 24px;
 }
 #page-home #main .rslides_container ul li {
-	max-width: 1092px; 
+	width: 100%;
+}
+#page-home #main .rslides_container ul li::before, #page-home #main .rslides_container ul li::after {
+	content: '';
+	position: absolute;
+	display: block;
+	top: 0px;
+	left: 0%;
+	height: 100%;
+	width: 50px;
+	background: url('../img/beauty-salon-taunton-background-slider.png') no-repeat -64px 50%;
+	background-size:  auto 100%;
+}
+#page-home #main .rslides_container ul li::after {
+	left: 96%;
+	background-position: -20px 50%;
 }
 #page-home #main .rslides_nav {
 	position: absolute;
@@ -353,21 +569,125 @@ main#main #main-column img.ajax-loader {
 }
 #page-home #main .prev {
 	left: 0px;
-	background: url("../img/beauty-salon-taunton-slider-prev.png") no-repeat 50% 50% transparent;
-	border: solid #E1E1E1 1px;
+	background-color: transparent;
 }
 #page-home #main .next {
 	right: 0px;
-	background: url("../img/beauty-salon-taunton-slider-next.png") no-repeat 50% 50% transparent;
-	border: solid #E1E1E1 1px;
+	background-color: transparent;
+}
+#page-home #main .next::before {
+	content: '';
+	width: 0;
+	height: 0;
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+	border-left: 18px solid #7d589e;
+	position: absolute;
+	top: 45%;
+	left: 2px;
+}
+#page-home #main .prev::after {
+	content: '';
+	width: 0; 
+	height: 0; 
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent; 
+	border-right:18px solid #7d589e; 
+	position: absolute;
+	top: 45%;
+	right: 2px;
+}
+#page-home #main .next:hover::before {
+	border-left: 18px solid #FFA838;
+}
+#page-home #main .prev:hover::after {
+	border-right: 18px solid #FFA838;
 }
 .contact-map {
+	position: relative;
 	border: 1px solid #CCC;
 }
+.contact-map:after {
+	background: none;
+    content: " ";
+    display: inline-block;
+    font-size: 0;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 9;
+}
+/***************************
+* USPs Block
+****************************/
+.usp-img {
+	width: 125px;
+	height: auto;
+	margin-right: 10px;
+}
+.usp {
+	border-right: 1px solid #CCC;
+}
+.usp:last-child, .usp:nth-child(3n) {
+	border-right: none;
+}
+/***************************
+* Social Networks Block
+****************************/
+.social-network {
+	min-height: 150px;
+}
+.social-img {
+	display: block;
+	float: left;
+	margin-right: 10px;
+	width: 150px;
+}
+/***************************
+* Blog & Search
+****************************/
+.listing-img {
+	float: left;
+	margin: 0 20px 10px 0;
+}
+#blog-archive, #post-single, #search, .blog #content, .category #content {
+	padding-top: 15px;
+	/*background: url('../img/beauty-salon-taunton-background-blog.jpg') transparent repeat-x 50% 50%;
+	background-size: 100% 100%;*/
+	background-color: #F9F9F9;
+}
+#blog-archive main, #post-single main, .blog main {
+	background: none transparent;
+}
+#blog-archive #main-column, #post-single #main-column, .blog #main-column, #search #main-column, .category #main-column {
+	padding-left: 0;
+	background: #F9F9F9;
+}
+#blog-archive main, #post-single main, .blog main, #search main, .category main {
+	padding-top: 0;
+}
+.article, #blog-archive article, #post-single article, .blog article, #search article, .category article,
+#sidebar-right.aside .widget, #sidebar-left.aside .widget, #page-contact-the-taunton-salon #main-column {
+	background: #FFF;
+	margin-bottom: 15px;
+	padding: 15px;
+	-webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
+	box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+/***************************
+* Media Queries
+****************************/
 @media (max-width: 1200px) {
-	#page-home #main .rslides_container {
-		padding-left: 0px;
-	}
+	#page-home #main .rslides_container ul li::before {
+		background-position: -50px 50%;
+	} 
 }
 @media (max-width: 992px) {
 	#site-header .site-title a span{
@@ -391,13 +711,55 @@ main#main #main-column img.ajax-loader {
 	.main-navigation {
 		margin-top: 25px;
 	}
+	#page-home #main .rslides_container ul li::before {
+		background-position: -40px 50%;
+	} 
+	#page-home #main .rslides_container ul li::after {
+		background-position: -10px 50%;
+	}
+	#blog-archive #main-column, #post-single #main-column, .blog #main-column, #search #main-column, .category #main-column {
+		padding-right: 0;
+	}
+	#treatments .sub-treatment {
+		max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: left;
+		padding-top: 0;
+		padding-bottom: 0;
+		float: none !important;
+	}
+	.sub-treatment .img-container.col-md-2 {
+		padding-right: 0;
+		padding-left: 0;
+	}
+	#treatments .buy-treatment {
+		float: none !important;
+		padding: 15px;
+	}
+	.sub-treatment .treatment-desc {
+		padding-top: 25px;
+	}
 }
 @media (max-width: 768px) {
+	#page-home #main-column {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	#page-home #main .rslides_container ul li::before {
+		display: none;
+	} 
+	#page-home #main .rslides_container ul li::after {
+		display: none;
+	}
 	#site-header .navbar {
 		margin-top: 0px;
 	}
 	#site-header .pull-right {
 		float: none !important;
+	}
+	#main-column .col-sm-6:last-child {
+		margin-top: 25px;
 	}
 	.site-branding {
 		width: 100%;
@@ -412,8 +774,40 @@ main#main #main-column img.ajax-loader {
 	#site-header .navbar li a {
 		color: #FFF;
 	}
+	#latest-news .twitter-news {
+		display: none;
+	}
+	#latest-news, #social-networks, .usp,
+	#sidebar-left.below aside.widget, #sidebar-right.below aside.widget {
+		float: none;
+		max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#sidebar-right.below .widget:last-child {
+		margin-right: inherit;
+	}
+	#latest-news, #social-networks, .usp {
+		border-right: 0;
+	}
+	#sidebar-left.below aside.widget, #sidebar-right.below aside.widget {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+	#featured-treatments .col-sm-4.text-right {
+		text-align: left;
+	}
+	.feature-img {
+		display: none;
+	}
 }
 @media (max-width: 480px) {
+	.btn, .entry-meta span {
+		width: 100%;
+	}
+	.rslides_container {
+		display: none;
+	}
 	#site-header .site-title {
 		height: 50px;
 		margin-bottom: 0;
@@ -435,5 +829,14 @@ main#main #main-column img.ajax-loader {
 	#page-home #main .next {
 		background: none transparent;
 		border: none;
+	}
+	.social-network {
+		text-align: center;
+	}
+	.social-img {
+		display: inline;
+		width: 100%;
+		max-width: 120px;
+		float: none;
 	}
 }

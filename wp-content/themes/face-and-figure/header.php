@@ -43,8 +43,8 @@
 		    }
 		  </style>
 		<![endif]-->
-			
-		<div id="page-<?php echo strtolower(get_the_title()); ?>" class="page-container">
+		<?php $titleID = strtolower(str_replace(" ", "-", get_the_title())); ?>
+		<div id="page-<?php echo $titleID; ?>" class="page-container">
 			<?php do_action('before'); ?> 
 			<header id="site-header" role="banner">
 				<div class="container">
@@ -81,4 +81,4 @@
 			</header>
 			
 			
-			<div id="content" class="row-with-vspace site-content">
+			<div id="content" class="site-content">

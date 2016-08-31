@@ -15,7 +15,7 @@ if (!function_exists('bootstrapBasicCategoriesList')) {
 	 */
 	function bootstrapBasicCategoriesList($categories_list = '') 
 	{
-		return sprintf('<span class="categories-icon glyphicon glyphicon-th-list" title="' . __('Posted in', 'bootstrap-basic') . '"></span> %1$s', $categories_list);
+		return sprintf('<i class="categories-icon glyphicon glyphicon-th-list" title="' . __('Posted in', 'bootstrap-basic') . '"></i> %1$s', $categories_list);
 	}// bootstrapBasicCategoriesList
 }
 
@@ -89,7 +89,7 @@ if (!function_exists('bootstrapBasicComment')) {
 
 						// if comment was not approved
 						if ('0' == $comment->comment_approved) {
-							echo '<div class="comment-awaiting-moderation text-warning"> <span class="glyphicon glyphicon-info-sign"></span> ';
+							echo '<div class="comment-awaiting-moderation text-warning"> <i class="glyphicon glyphicon-info-sign"></i> ';
 								_e('Your comment is awaiting moderation.', 'bootstrap-basic');
 							echo '</div>';
 						} //endif;
@@ -130,8 +130,8 @@ if (!function_exists('bootstrapBasicCommentsPopupLink')) {
 	 */
 	function bootstrapBasicCommentsPopupLink() 
 	{
-		$comment_icon = '<span class="comment-icon glyphicon glyphicon-comment"><small class="comment-total">%d</small></span>';
-		$comments_icon = '<span class="comment-icon glyphicon glyphicon-comment"><small class="comment-total">%s</small></span>';
+		$comment_icon = '<i class="comment-icon glyphicon glyphicon-comment"><small class="comment-total">%d</small></i>';
+		$comments_icon = '<i class="comment-icon glyphicon glyphicon-comment"><small class="comment-total">%s</small></i>';
 		return comments_popup_link(sprintf($comment_icon, ''), sprintf($comment_icon, '1'), sprintf($comments_icon, '%'), 'btn btn-default btn-xs');
 	}// bootstrapBasicCommentsPopupLink
 }
@@ -274,13 +274,13 @@ if (!function_exists('bootstrapBasicPostOn')) {
 			esc_html(get_the_modified_date())
 		);
 
-		printf(__('<span class="posted-on">Posted on %1$s</span><span class="byline"> by %2$s</span>', 'bootstrap-basic'),
-			sprintf('<a href="%1$s" title="%2$s" rel="bookmark">%3$s</a>',
+		printf(__('<span class="col-xs-3 posted-on"><i class="fa fa-calendar" aria-hidden="true"></i>%1$s</span><span class="byline col-xs-3"><i class="fa fa-user" aria-hidden="true"></i>%2$s</span>', 'bootstrap-basic'),
+			sprintf('<a href="%1$s" title="%2$s" rel="bookmark">Posted on %3$s</a>',
 				esc_url(get_permalink()),
 				esc_attr(get_the_time()),
 				$time_string
 			),
-			sprintf('<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span>',
+			sprintf('<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">By %3$s</a></span>',
 				esc_url(get_author_posts_url(get_the_author_meta('ID'))),
 				esc_attr(sprintf(__('View all posts by %s', 'bootstrap-basic'), get_the_author())),
 				esc_html(get_the_author())
@@ -299,7 +299,7 @@ if (!function_exists('bootstrapBasicTagsList')) {
 	 */
 	function bootstrapBasicTagsList($tags_list = '') 
 	{
-		return sprintf('<span class="tags-icon glyphicon glyphicon-tags" title="' . __('Tagged', 'bootstrap-basic') . '"></span>&nbsp; %1$s', $tags_list);
+		return sprintf('<i class="tags-icon glyphicon glyphicon-tags" title="' . __('Tagged', 'bootstrap-basic') . '"></i>&nbsp; %1$s', $tags_list);
 	}// bootstrapBasicTagsList
 }
 

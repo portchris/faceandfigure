@@ -5,6 +5,7 @@
  * @package bootstrap-basic
  */
 ?>
+			<?php if (is_active_sidebar('footer-center') && dynamic_sidebar('footer-center')): ?>
 				<div id="get_in_touch">
 					<div class="container">
 						<div class="row row-with-vspace">
@@ -14,6 +15,7 @@
 						</div>
 					</div>
 				</div>
+			<?php endif; ?>
 			</div><!--.site-content-->
 			<footer id="site-footer" role="contentinfo">
 				<div class="container">
@@ -39,8 +41,6 @@
 				</div>
 			</footer>
 		</div><!--.container page-container-->
-		
-		
 		<!--wordpress footer-->
 		<?php wp_footer(); ?> 
 	</body>

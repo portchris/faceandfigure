@@ -186,3 +186,29 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/widgets/BootstrapBasicSearchWidget.php';
 require get_template_directory() . '/inc/template-widgets-hook.php';
 
+/**
+ * --------------------------------------------------------------
+ * Custom Face & Figure Salon Functions
+ * --------------------------------------------------------------
+ */
+if (!function_exists('fix_no_editor_on_posts_page')) {
+	/**
+	* Add the wp-editor back into WordPress after it was removed in 4.2.2.
+	*
+	* @param $post
+	* @return void
+	*/
+	function fix_no_editor_on_posts_page($post) {
+		if ($post->ID != get_option('page_for_posts'))
+			return;
+		remove_action('edit_form_after_title', '_wp_posts_page_notice');
+		add_post_type_support('page', 'editor');
+	}
+	add_action('edit_form_after_title', 'fix_no_editor_on_posts_page', 0);
+}
+
+function custom_excerpt_length($length) {
+	return 50;
+}
+add_filter('excerpt_length', 'custom_excerpt_length', 999);
+
