@@ -1,7 +1,8 @@
 <?php defined('ABSPATH') or die("No script kiddies please!"); ?>
 <p>Plugin configuration video </p>
  <iframe width="560" height="315" src="https://www.youtube.com/embed/tAfiyOnoEZs" frameborder="0" allowfullscreen></iframe>
-
+<br />
+You can get the details instruction for creating facebook app <a href='http://demo.accesspressthemes.com/wordpress-plugins/accesspress-social-share/?p=89' target="_blank">here</a>.
 <br />
 <p>Basically there are four main settings tabs that will help you to setup the plugin to work properly.</p>
 <dl>

@@ -21,7 +21,6 @@ $main_column_size = bootstrapBasicGetMainColumnSize(); ?>
 				while (have_posts()) {
 					the_post();
 					$post_cta = simple_fields_fieldgroup('post_cta');
-					var_dump($cta);
 					get_template_part('content', get_post_format());
 					if (isset($post_cta) && !empty($post_cta)): ?>
 						<?php $cta_txt = (isset($post_cta['post_cta_text']) && !empty($post_cta['post_cta_text'])) ? $post_cta['post_cta_title'] : 'View further details' ?>

@@ -1099,7 +1099,7 @@
 
 .apss-theme-3 .apss-single-icon {
     display: inline-block;
-    width: 50%;
+    /*width: 50%;*/
 }
 }
 
@@ -1107,7 +1107,7 @@
 
 .apss-theme-3 .apss-single-icon {
     display: inline-block;
-    width: 100%;
+    /*width: 100%;*/
     clear: both;
 }
 
