@@ -38,7 +38,7 @@ $modulus = 3; ?>
 	<main id="main" class="site-main" role="main">
 		<?php $parents = get_post_ancestors($post); 
 		$p_c = count($parents) - 1;
-		$parent_id = ($parents) ? $parents[$p_c] : $post->ID; 
+		$parent_id = ($parents) ? $parents[$p_c] : $post->ID;
 		$nrc_link = (get_post_meta($post->ID, 'natural_remedy_link', true)) ? get_post_meta($post->ID, 'natural_remedy_link', true) : '';
 		$contact_addr = (get_post_meta($post->ID, 'contact_address', true)) ? get_post_meta($post->ID, 'contact_address', true) : '';
 		$buy_txt = __('Purchase ', 'portchris') . $post->post_title . __(' Online', 'portchris'); ?>
@@ -67,7 +67,7 @@ $modulus = 3; ?>
 						if (strlen($nrc_link) > 0): ?>
 							<div class="buy-treatment">
 								<h3><?php echo $buy_txt ?></h3>
-								<a role="button" target="_blank" class="btn btn-lg btn-default" href="<?php echo $nrc_link ?>" title="<?php echo $buy_txt . __(' (Opens www.naturalremedy.company in new tab)', 'portchris') ?>">
+								<a role="button" target="_blank" class="btn btn-lg btn-default" href="<?php echo $nrc_link ?>" title="<?php echo $buy_txt . __(' (Opens www.naturalremedy.company in new tab)', 'portchris') ?>" onclick="ga('send', 'event', 'Button', 'Click', 'Buy Online', 10);">
 									<?php _e('Buy Online', 'portchris') ?>
 								</a>
 							</div>
@@ -190,14 +190,14 @@ $modulus = 3; ?>
 									</div><!-- .treatment-desc -->
 									<?php if ($parent_id !== $post->ID): ?>
 										<div class="buy-treatment col-md-3 pull-right text-right">
-											<a role="button" class="btn btn-lg row-with-vspace" href="#enquire-within" title="<?php _e('Phone now: 01823 413008', 'portchris') ?>">
+											<a role="button" class="btn btn-lg row-with-vspace" href="#enquire-within" title="<?php _e('Contact us now by filling in the form below or calling us', 'portchris') ?>" onclick="ga('send', 'event', 'Button', 'Click', 'Make an enquiry', 10);">
 												<i class="fa fa-phone" aria-hidden="true"></i>
-												<?php _e('01823 413008', 'portchris') ?>
+												<?php _e('Make an enquiry', 'portchris') ?>
 											</a>
 											<?php if (strlen($nrc_link) > 0 && $parent_id !== $post->ID): ?>
-												<a role="button" target="_blank" class="btn btn-lg btn-default" href="<?php echo $nrc_link ?>" title="<?php echo $buy_txt . __(' (Opens www.naturalremedy.company in new tab)', 'portchris') ?>">
+												<a role="button" target="_blank" class="btn btn-lg btn-default" href="<?php echo $nrc_link ?>" title="<?php echo $buy_txt . __(' (Opens www.naturalremedy.company in new tab)', 'portchris') ?>" onclick="ga('send', 'event', 'Button', 'Click', 'Purchase Online', 10);">
 													<i class="fa fa-shopping-cart" aria-hidden="true"></i>
-													<?php _e('Purchase Online', 'portchris') ?>
+													<?php _e('Purchase online', 'portchris') ?>
 												</a>
 											<?php endif; ?>
 										</div>
@@ -216,8 +216,7 @@ $modulus = 3; ?>
 				<div id="enquire-within" class="col-md-12">
 					<?php echo do_shortcode('[contact-form-7 id="156" title="Enquire within"]'); ?>
 					<script type="text/javascript">
-						jQuery(document).ready(function()
-						{
+						jQuery(document).ready(function() {
 							var title = "<?php echo htmlspecialchars_decode(the_title()) ?>";
 							jQuery("#enquire-within .your-subject input").val(title);
 							ga('send', 'event', 'enquiry', 'submit', title);

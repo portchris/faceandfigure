@@ -212,3 +212,14 @@ function custom_excerpt_length($length) {
 }
 add_filter('excerpt_length', 'custom_excerpt_length', 999);
 
+/**
+ * Set post connector for a post using PHP.
+ * This way it's possible to select a post connector for posts based on their ID, categories, tags, post type, and so on
+ */
+function simple_fields_modify_connector_for_post($connector, $post) {
+	if ("post" === $post->post_type) {
+		$connector = "single_post_connector";
+	}
+	return $connector;
+}
+add_filter("simple_fields_get_selected_connector_for_post", "simple_fields_modify_connector_for_post", 10, 2);
